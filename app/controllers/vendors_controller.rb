@@ -4,6 +4,10 @@ class VendorsController < ApplicationController
     @vendor = Vendor.new
   end
 
+  def index
+    @vendors = Vendor.all
+  end
+
   def create
     @vendor = Vendor.new(params.require(:vendor).permit(:name,:no_of_employees,:market_id))
     if @vendor.save

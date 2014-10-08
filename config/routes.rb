@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
-  get 'products/create'
+  # post "products/create"
+  #
+  # post "sales/create"
+  #
+  # post "markets/create"
+  #
+  # get "/vendors", to: ":vendors#index"
+  post "/vendors/create", to: ":vendors#create"
 
-  get 'sales/create'
+  root "vendors#index"
 
-  get 'markets/create'
-
-  get 'vendors/create'
-
-  root "vendor#index"
+  # post "vendors#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
