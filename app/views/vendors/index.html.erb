@@ -1,3 +1,11 @@
  <!-- vendor will be able to create, edit, and delete himself -->
 <h2>Vendor's opening page</h2>
 <%= link_to "New Vendor", "/vendors/new" %>
+
+<% @vendors.each do |vendor| %>
+    <ul>
+    <li><h3><%= vendor.name %></h3>
+    <%= vendor.no_of_employees %>
+    <%= vendor.market_id %></li>
+    </ul>
+<% end %>
