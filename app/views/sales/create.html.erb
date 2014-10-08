@@ -1,2 +1,7 @@
-<h1>Sale#create</h1>
-<p>Find me in app/views/sale/create.html.erb</p>
+<h1>New Sales</h1>
+<form action="/posts" method="POST">
+  Title<input type="text" name="post[title]" value="<%= @post.title %>"/>
+  Content<input type="text" name="post[content]" value="<%= @post.content %>"/>
+
+  <input type='submit'/>
+</form>
