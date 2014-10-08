@@ -3,9 +3,16 @@
 <%= link_to "New Vendor", "/vendors/new" %>
 
 <% @vendors.each do |vendor| %>
-    <ul>
-    <li><h3><%= vendor.name %></h3>
-    <%= vendor.no_of_employees %>
-    <%= vendor.market_id %></li>
-    </ul>
+    <form action= "/" method="post">
+    <table>
+    <tr>
+    <th>Vendor Name</th><th>Number of Employees</th><th>Market ID</th><th>Delete</th>
+    </tr>
+    <tr>
+    <td><%= vendor.name %></td><td><%= vendor.no_of_employees %></td>
+    <td><%= vendor.market_id %></td><td><input type="radio" onclick='<%= vendor.delete %>'</td>
+    </tr>
+    </table>
+    <input type="Submit" name="Submit" value="Submit">
+  </form>
 <% end %>

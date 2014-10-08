@@ -18,7 +18,7 @@ class VendorsController < ApplicationController
   end
 
   def delete
-    @vendor = nil
+    @vendor.destroy
   end
 
 

@@ -7,12 +7,13 @@ Rails.application.routes.draw do
   #
   # get "/vendors", to: "vendors#index"
   # post "/vendors/create", to: "vendors#create"
-
+  get "/", to: "vendors#index"
   get "/vendors/new", to: "vendors#new"
   get "/markets/new", to: "markets#new"
 
   post "/vendors", to: "vendors#create"
   post "/markets", to: "markets#create"
+  post "/", to: "vendors#index"
 
   root "vendors#index"
 
