@@ -15,7 +15,10 @@ class VendorsController < ApplicationController
     else
       render :new  #this renders new.html.erb again
     end
+  end
 
+  def delete
+    @vendor = nil
   end
 
 

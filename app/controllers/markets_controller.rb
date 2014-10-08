@@ -1,5 +1,9 @@
 class MarketsController < ApplicationController
 
+  def index
+    @markets = Market.all
+  end
+    
   def new
     @market = Market.new
   end
@@ -11,6 +15,10 @@ class MarketsController < ApplicationController
     else
       render :new  #this renders new.html.erb again
     end
+  end
+
+  def delete
+    @market = nil
   end
 
 end
