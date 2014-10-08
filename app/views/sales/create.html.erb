@@ -1,7 +1,7 @@
 <h1>New Sales</h1>
-<form action="/posts" method="POST">
-  Title<input type="text" name="post[title]" value="<%= @post.title %>"/>
-  Content<input type="text" name="post[content]" value="<%= @post.content %>"/>
+<form action="/sales" method="POST">
+  Amount<input type="integer" name="sale[amount]" value="<%= @sale.amount %>"/>
+  Product<input type="text" name="product[name]" value="<%= @product.name %>"/>
 
   <input type='submit'/>
 </form>
