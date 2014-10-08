@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   #
   # post "markets/create"
   #
-  # get "/vendors", to: ":vendors#index"
-  # post "/vendors/create", to: ":vendors#create"
-
+  # get "/vendors", to: "vendors#index"
+  # post "/vendors/create", to: "vendors#create"
+  get "/vendors/new", to: "vendors#new"
   root "vendors#index"
 
   # post "vendors#index"
