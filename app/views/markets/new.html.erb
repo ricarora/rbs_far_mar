@@ -1,0 +1,17 @@
+<h2>New Market</h2>
+
+
+<form action="/markets" method="post">
+
+<ul>
+  <li>Market Name <input type="text" name="market[name]"  value = "<%= @market.name %>"  /></li>
+  <li>Address <input type="string" name="market[address]" value = "<%= @market.address %>" /></li>
+  <li>City <input type="string" name="market[city]" value = "<%= @market.city %>"/>,
+  County<input type="string" name="market[county]" value = "<%= @market.county %>"/>,
+  State<input type="string" name="market[state]" value = "<%= @market.state %>"/></li>
+  <li>Zip<input type="string" name="market[zip]" value = "<%= @market.zip %>"/></li>
+</ul>
+<br>
+
+  <input type = "submit" value="new market">
+</form>

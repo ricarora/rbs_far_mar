@@ -3,14 +3,16 @@ Rails.application.routes.draw do
   #
   # post "sales/create"
   #
-  # post "markets/create"
+
   #
   # get "/vendors", to: "vendors#index"
   # post "/vendors/create", to: "vendors#create"
-  
+
   get "/vendors/new", to: "vendors#new"
+  get "/markets/new", to: "markets#new"
 
   post "/vendors", to: "vendors#create"
+  post "/markets", to: "markets#create"
 
   root "vendors#index"
 
