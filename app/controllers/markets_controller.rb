@@ -1,6 +1,6 @@
 class MarketsController < ApplicationController
-  def create
+def create
 
-  end
+end
 
 end
