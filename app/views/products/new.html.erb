@@ -1,0 +1,23 @@
+<form class="new_entry" action="/products" method="post">
+
+  <h2>Add New Product</h2>
+
+  <div>
+    <label for="name">Name(required)</label>
+    <input type="text" name="product[name]"  value = "<%= @product.name %>"  />
+ </div>
+
+<br>
+
+   <input type = "submit" value="Add">
+ </form>
+
+ <h2> All Products </h2>
+
+ <% Product.all.each do |product| %>
+    <ul>
+     <li><%= product.name %></li>
+     <li><%= link_to "Edit", edit_product_path(product.id) %></li>
+     <li><%= button_to "Delete", destroy_product_path(product.id), method: :delete %></li>
+   </ul>
+ <% end %>

@@ -14,28 +14,30 @@ Rails.application.routes.draw do
   get "/home", to: "home#index"
 
   get "/vendors/index", to: "vendors#index"
-
-  get "/markets/index", to: "markets#index", as: :market_home
-
   get "/vendors/new", to: "vendors#new"
-
   post "/vendors", to: "vendors#create"
 
+  get "/markets/index", to: "markets#index", as: :market_home
   get "/markets/new", to: "markets#new"
+  post "/markets", to: "markets#create"
+
+  get "/products/new", to: "products#new", as: :product_new
+  post "/products", to: "products#create"
 
   get "/markets/:id", to: "markets#edit", as: :edit_market
   put "/markets/:id", to: "markets#update"
   delete "/markets/:id", to: "markets#delete"
 
-  post "/markets", to: "markets#create"
-
-
   get "/vendors/:id/edit", to: "vendors#edit", as: :edit_vendor
   put "/vendors/:id", to: "vendors#update"
-
   delete "/vendors/:id", to: "vendors#delete", as: :destroy_vendor
 
-  root "vendor#index"
+  get "/products/:id/edit", to: "products#edit", as: :edit_product
+  put "/products/:id", to: "products#update"
+  delete "/products/:id", to: "products#delete", as: :destroy_product
+
+  root "vendors#index"
+
 
   get "/home/user", to: "home#user", as: :user_home
 
