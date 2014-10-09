@@ -7,13 +7,24 @@ Rails.application.routes.draw do
   #
   # get "/vendors", to: "vendors#index"
   # post "/vendors/create", to: "vendors#create"
+
   get "/", to: "vendors#index"
+  post "/", to: "vendors#index"
+
+  get "/markets/index", to: "markets#index", as: :market_home
+
   get "/vendors/new", to: "vendors#new"
-  get "/markets/new", to: "markets#new"
 
   post "/vendors", to: "vendors#create"
+
+  get "/markets/new", to: "markets#new"
+
+  get "/markets/:id", to: "markets#edit", as: :edit_market
+  put "/markets/:id", to: "markets#update"
+  delete "/markets/:id", to: "markets#delete"
+
   post "/markets", to: "markets#create"
-  post "/", to: "vendors#index"
+
 
   root "vendors#index"
 

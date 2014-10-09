@@ -1,7 +1,6 @@
 
-<form action="/markets" method="post" >
-
-
+<form action="/markets/<%= @market.id %>" method="post" >
+  <input type="hidden" name="_method" value="PUT">
   <h1>New Market</h1>
 
 
@@ -30,6 +29,8 @@
 
 <br>
 
-  <input type = "submit" value="Create Market" id="submit">
-
+  <input type = "submit" value="Edit Market" id="submit">
+  <div id="cancel">
+    <%= link_to "Cancel", root_path %>
+  </div>
 </form>

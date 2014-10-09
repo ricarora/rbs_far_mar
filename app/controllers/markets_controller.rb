@@ -9,7 +9,7 @@ class MarketsController < ApplicationController
   end
 
   def create
-    @market = Market.new(params.require(:market).permit(:name,:address,:city,:county,:state,:zip))
+    @market = Market.new(post_params)
     if @market.save
       redirect_to root_path
     else
@@ -18,13 +18,27 @@ class MarketsController < ApplicationController
   end
 
   def delete
-    # @market = nil
+    Market.find(params[:id]).destroy
+    redirect_to root_path
   end
 
   def edit
+    @market = Market.find(params[:id])
   end
 
   def update
+    @market = Market.find(params[:id])
+    if @market.update(post_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  private #this prevents the routes from calling a method. Can only be used by self
+
+  def post_params #rails does this for you
+    params.require(:market).permit(:name,:address,:city,:county,:state,:zip)
   end
 
 end
