@@ -8,6 +8,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav id="main_nav_bar">
+
+    <ul>
+      <li><%= link_to "New Market", "/markets/new" %></li>
+      <li><%= link_to "New Vendor", "/vendors/new" %></li>
+      <li><%= link_to "List of Markets", "/markets/index" %></li>
+      <li><%= link_to "List of Vendors", "/vendors/index" %></li>       </li>
+    </ul>
+
+  </nav>
 
 <%= yield %>
 

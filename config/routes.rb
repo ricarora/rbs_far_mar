@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get "/", to: "vendors#index"
   post "/", to: "vendors#index"
 
+  get "/vendors/index", to: "vendors#index"
+
   get "/markets/index", to: "markets#index", as: :market_home
 
   get "/vendors/new", to: "vendors#new"

@@ -17,10 +17,10 @@ class MarketsController < ApplicationController
     end
   end
 
-  def delete
-    Market.find(params[:id]).destroy
-    redirect_to root_path
-  end
+  # def delete
+  #   Market.find(params[:id]).destroy
+  #   redirect_to root_path
+  # end
 
   def edit
     @market = Market.find(params[:id])
