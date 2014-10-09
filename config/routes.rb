@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get "/", to: "vendors#index"
   post "/", to: "vendors#index"
 
+  get "/home", to: "home#index"
+
   get "/vendors/index", to: "vendors#index"
 
   get "/markets/index", to: "markets#index", as: :market_home
@@ -33,7 +35,7 @@ Rails.application.routes.draw do
 
   delete "/vendors/:id", to: "vendors#delete", as: :destroy_vendor
 
-  root "vendors#index"
+  root "vendor#index"
 
   # post "vendors#index"
 
