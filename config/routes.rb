@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   post "/markets", to: "markets#create"
   post "/", to: "vendors#index"
 
+  get "/vendors/:id/edit", to: "vendors#edit", as: :edit_vendor
+  put "/vendors/:id", to: "vendors#update"
+
+  delete "/vendors/:id", to: "vendors#delete", as: :destroy_vendor
+
   root "vendors#index"
 
   # post "vendors#index"
