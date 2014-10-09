@@ -1,7 +1,5 @@
+.new_entry {
 
-
-
-form {
   border: 1px solid #fff;
   border-radius: 1em;
   display: block;
@@ -15,9 +13,9 @@ form {
   padding: 5%;
   text-align: center;
 
-}
 
-form div + div {
+
+div + div {
   margin-top: 1em;
 }
 
@@ -55,6 +53,7 @@ label {
   border-radius: 1em;
 }
 
+
 #cancel {
   display: inline-block;
 
@@ -66,4 +65,5 @@ label {
   background-color: #de0101;
   border: solid #932260;
   border-radius: 1em;
+
 }
