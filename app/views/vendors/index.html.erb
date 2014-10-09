@@ -2,17 +2,18 @@
 <h2>Vendor's opening page</h2>
 <%= link_to "New Vendor", "/vendors/new" %>
 
-<% @vendors.each do |vendor| %>
-    <form action= "/" method="post">
-    <table>
+
+    <table style="border: 1px solid black">
     <tr>
     <th>Vendor Name</th><th>Number of Employees</th><th>Market ID</th><th>Delete</th>
     </tr>
+<% @vendors.each do |vendor| %>
     <tr>
-    <td><%= vendor.name %></td><td><%= vendor.no_of_employees %></td>
-    <td><%= vendor.market_id %></td><td><input type="radio" onclick='<%= vendor.delete %>'</td>
+      <td><%= vendor.name %></td>
+      <td><%= vendor.no_of_employees %></td>
+      <td><%= vendor.market_id %></td>
+      <td><input type="radio" onclick='<% 'vendor.delete' %>'></td>
     </tr>
-    </table>
-    <input type="Submit" name="Submit" value="Submit">
-  </form>
 <% end %>
+    </table>
+    

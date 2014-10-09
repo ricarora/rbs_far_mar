@@ -1,9 +1,21 @@
-<h2>New Vendor</h2>
+<form action="/vendors" method="post">
 
- <form action="/vendors" method="post">
-   Vendor Name <input type="text" name="vendor[name]"  value = "<%= @vendor.name %>"  />
-   Number of Employees <input type="integer" name="vendor[no_of_employees]" value = "<%= @vendor.no_of_employees %>" />
-   Market ID <input type="integer" name="vendor[market_id]" value = "<%= @vendor.market_id %>"/>
+  <h2>Vendor Profile</h2>
 
-   <input type = "submit" value="new vendor">
+  <div>
+    <label for="name">Name(required)</label>
+    <input type="text" name="vendor[name]"  value = "<%= @vendor.name %>"  />
+ </div>
+ <div>
+   <label for="no_of_employees">Number of Employees</label>
+   <input type="integer" name="vendor[no_of_employees]" value = "<%= @vendor.no_of_employees %>" />
+ </div>
+ <div>
+   <label for="market_name">Market Association</label>
+   <input type="integer" name="vendor[market_id]" value = "<%= @vendor.market_id %>"/>
+</div>
+
+<br>
+
+   <input type = "submit" value="Sign up">
  </form>
