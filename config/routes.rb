@@ -37,6 +37,9 @@ Rails.application.routes.draw do
 
   root "vendor#index"
 
+  get "/home/user", to: "home#user", as: :user_home
+
+
   # post "vendors#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
