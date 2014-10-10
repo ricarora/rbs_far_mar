@@ -27,6 +27,22 @@
 </div>
 
 <div class="product_display">
+
+  <form  action="/products" method="post">
+
+    <h2>Add New Product</h2>
+
+    <div>
+      <label for="name">Name</label>
+      <input type="text" name="product[name]"   />
+   </div>
+
+  <br>
+
+     <input type = "submit" value="Add">
+   </form>
+
+
   <h3>Products</h3>
     <% @vendor.products.each do |product| %>
        <ul>

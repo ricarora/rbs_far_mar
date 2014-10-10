@@ -41,5 +41,6 @@ class VendorsController < ApplicationController
 
   def profile
     @vendor = Vendor.find(session[:vendor_id])
+    
   end
 end
