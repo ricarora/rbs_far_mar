@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20141009231052) do
     t.integer  "market_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
   end
 
 end
