@@ -17,10 +17,15 @@ class MarketsController < ApplicationController
     end
   end
 
-  # def delete
-  #   Market.find(params[:id]).destroy
-  #   redirect_to root_path
-  # end
+  def lookup
+    new
+  end
+
+  def search
+    # raise params.inspect
+    @market = index.where("name: ?", name: params[:input])
+    
+  end
 
   def edit
     @market = Market.find(params[:id])
@@ -29,7 +34,7 @@ class MarketsController < ApplicationController
   def update
     @market = Market.find(params[:id])
     if @market.update(post_params)
-      redirect_to market_home_path
+      redirect_to market_sessions_path
     else
       render :edit
     end

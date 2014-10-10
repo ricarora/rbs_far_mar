@@ -30,6 +30,8 @@ Rails.application.routes.draw do
 
   get "/markets/new", to: "markets#new"
   post "/markets", to: "markets#create"
+  get "/markets/lookup", to: "markets#lookup"
+  post "/markets/search", to: "markets#search"
 
   get "/products/new", to: "products#new", as: :product_new
   post "/products", to: "products#create"
