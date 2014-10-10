@@ -1,6 +1,25 @@
+<form class="new_entry" action "/" method="get">
+
+<h2>Please sign in or create a Vendor Profile below:</h2>
+<div>
+  <label for="username">Username:</label>
+  <input type="text" name="vendor[username]"  value = "<%= @vendor.username %>"  />
+</div>
+<div>
+  <label for="password">Password:</label>
+  <input type="password" name="vendor[password]"  value = "<%= @vendor.password %>"  />
+</div>
+<br>
+<input type = "submit" value="Sign In" class = "submit">
+
+
+</form>
+
+
+
 <form class="new_entry" action="/vendors" method="post">
 
-  <h2>Vendor Profile</h2>
+  <h2>Create Vendor Profile</h2>
 
   <div>
     <label for="name">Name(required)</label>
@@ -14,8 +33,16 @@
    <label for="market_name">Market Association</label>
    <input type="integer" name="vendor[market_id]" value = "<%= @vendor.market_id %>"/>
 </div>
+<div>
+  <label for="username">Username(required):</label>
+  <input type="text" name=""  value = ""  />
+</div>
+<div>
+  <label for="password">Password(required):</label>
+  <input type="password" name=""  value = ""  />
+</div>
 
 <br>
 
-   <input type = "submit" value="Sign up">
+   <input type = "submit" value="Sign Up" class = "submit">
  </form>
