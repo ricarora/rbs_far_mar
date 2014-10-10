@@ -11,7 +11,7 @@ class VendorsController < ApplicationController
   def create
     @vendor = Vendor.new(vendor_params)
     if @vendor.save
-      redirect_to root_path
+      redirect_to "/vendors/index"
     else
       render :new  #this renders new.html.erb again
     end
@@ -23,7 +23,7 @@ class VendorsController < ApplicationController
   end
 
   def edit
-    @vendor = Vendor.find(params[:id])
+    @vendor = Vendor.find(session[:vendor_id])
   end
 
   def update
@@ -36,7 +36,7 @@ class VendorsController < ApplicationController
   end
 
   def vendor_params
-    params.require(:vendor).permit(:name,:no_of_employees,:market_id)
+    params.require(:vendor).permit(:name,:no_of_employees,:market_id,:username,:password)
   end
 
 end

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   # post "products/create"
   #
   # post "sales/create"
@@ -8,16 +14,19 @@ Rails.application.routes.draw do
   # get "/vendors", to: "vendors#index"
   # post "/vendors/create", to: "vendors#create"
 
-  get "/", to: "vendors#index"
-  post "/", to: "vendors#index"
+  get "/", to: "sessions#new"
+  post "/", to: "sessions#new"
 
-  get "/home", to: "home#index"
+  post "/sessions", to: "sessions#create"
+
+  # get "/sessions", to: "sessions#new"
 
   get "/vendors/index", to: "vendors#index"
   get "/vendors/new", to: "vendors#new"
   post "/vendors", to: "vendors#create"
 
-  get "/markets/index", to: "markets#index", as: :market_home
+  get "/markets/index", to: "markets#index", as: :market_sessions
+
   get "/markets/new", to: "markets#new"
   post "/markets", to: "markets#create"
 
@@ -28,7 +37,7 @@ Rails.application.routes.draw do
   put "/markets/:id", to: "markets#update"
   delete "/markets/:id", to: "markets#delete"
 
-  get "/vendors/:id/edit", to: "vendors#edit", as: :edit_vendor
+  get "/vendors/edit", to: "vendors#edit", as: :edit_vendor
   put "/vendors/:id", to: "vendors#update"
   delete "/vendors/:id", to: "vendors#delete", as: :destroy_vendor
 
@@ -36,10 +45,12 @@ Rails.application.routes.draw do
   put "/products/:id", to: "products#update"
   delete "/products/:id", to: "products#delete", as: :destroy_product
 
-  root "vendors#index"
+  root "sessions#create"
 
 
-  get "/home/user", to: "home#user", as: :user_home
+  get "/sessions/user", to: "sessions#user"
+
+end
 
 
   # post "vendors#index"
@@ -98,4 +109,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end

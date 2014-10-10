@@ -4,7 +4,7 @@ class Vendor < ActiveRecord::Base
 
   belongs_to :market
 
-  validates :name, presence: true
+  validates :name , presence: true
   validates :username, presence: true
   validates :password, presence: true
 end

@@ -29,7 +29,7 @@ class MarketsController < ApplicationController
   def update
     @market = Market.find(params[:id])
     if @market.update(post_params)
-      redirect_to root_path
+      redirect_to market_home_path
     else
       render :edit
     end

@@ -1,0 +1,20 @@
+<h1>Sessions#new</h1>
+<p>Find me in app/views/sessions/new.html.erb</p>
+<p>Find me in app/views/sessions/create.html.erb</p>
+
+<form class="new_entry" action="/sessions" method="post">
+
+<h2>Please sign in or create a Vendor Profile below:</h2>
+<div>
+  <label for="vendor_username">Username:</label>
+  <input type="string" name="vendor[username]"   />
+</div>
+<div>
+  <label for="vendor_password">Password:</label>
+  <input type="password" name="vendor[password]"    />
+</div>
+<br>
+<input type = "submit" value="Sign In" class = "submit">
+<!-- <%= link_to "Submit", "/vendors/index", style: "color:#ffffff;font-size:1.75em"%> -->
+
+</form>

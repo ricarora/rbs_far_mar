@@ -1,0 +1,16 @@
+<form class="new_entry" action "/sessions/new" method="post">
+  <input type="hidden" name="_method" value="PUT">
+<h2>Please sign in or create a Vendor Profile below:</h2>
+<div>
+  <label for="username">username:</label>
+  <input type="string" name="vendor[username]"  value = "<%= @vendor.username %>"  />
+</div>
+<div>
+  <label for="password">Password:</label>
+  <input type="password" name="vendor[password]"  value = "<%= @vendor.password %>"  />
+</div>
+<br>
+<!-- <input type = "submit" value="Sign In" class = "submit"> -->
+<%= link_to "Submit", "/vendors/index", style: "color:#ffffff;font-size:1.75em"%>
+
+</form>
