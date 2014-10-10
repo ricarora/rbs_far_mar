@@ -14,6 +14,17 @@
   text-align: center;
 
 
+h1 {
+  font-size: 2.2em;
+  line-height: 2.5em;
+  word-spacing: -.1em;
+
+}
+h2 {
+  line-height: 2em;
+  text-align: center;
+
+}
 
 div + div {
   margin-top: 1em;
@@ -42,7 +53,7 @@ label {
 
 #submit {
   display: inline-block;
-  
+
 
 
   margin-bottom: 1ex;
