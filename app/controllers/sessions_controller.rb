@@ -13,6 +13,8 @@ class SessionsController < ApplicationController
     end
   end
 
-  def destroy
+  def delete
+    session[:vendor_id] = nil
+    redirect_to root_path
   end
 end

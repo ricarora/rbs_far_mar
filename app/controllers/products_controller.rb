@@ -28,9 +28,8 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(params.require(:product).permit(:name, :vendor_id))
-      redirect_to product_new_path
-    else
-      render :edit
+      redirect_to "/vendors/profile"
     end
+
   end
 end
