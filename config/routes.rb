@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post "/", to: "sessions#new"
 
   post "/sessions", to: "sessions#create"
+  delete "/sessions", to: "sessions#delete"
 
   # get "/sessions", to: "sessions#new"
 

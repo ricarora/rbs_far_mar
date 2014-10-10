@@ -1,14 +1,10 @@
-<h2>Vendor Profile</h2>
 
-<%= link_to "New Vendor", "/vendors/new" %>
 
-<%= link_to "Market", "/markets/search" %>
 
-<%= link_to "List of Markets", "/markets/index" %>
 
-<%= link_to "Products", "/products/new" %>
-
-<div class="profile">
+<div class="vendor_profile">
+  <div class="page_header">Your Vendor Profile</div>
+  <br>
 <ul>
   <li>Vendor Name: <%= @vendor.name %></li>
   <li>Number of Employees: <%= @vendor.no_of_employees %></li>
@@ -24,18 +20,38 @@
   <li><%= link_to "Edit", edit_vendor_path(@vendor.id) %></li>
   <li><%= button_to "Delete", destroy_vendor_path(@vendor.id), method: :delete %></li>
 </ul>
+
+  <div class="logout">
+    <li><%= link_to "Log Off", "/sessions", method: :delete %>
+    </li>
+
+  </div>
 </div>
 
 <div class="product_display">
-  <h3>Products</h3>
-    <% @vendor.products.each do |product| %>
-       <ul>
-        <li><%= product.name %></li>
-        <li><%= link_to "Edit", edit_product_path(product.id) %></li>
-        <li><%= button_to "Delete", destroy_product_path(product.id), method: :delete %></li>
-      </ul>
-    <% end %>
+  <h2>Products You Offer:</h2>
+  <div class="scroll_list"
+    <
+      <% @vendor.products.sort_by {|product| product.name}.each do |product| %>
+         <ul>
+          <li><%= product.name %></li>
+          <li><%= link_to "Edit", edit_product_path(product.id) %></li>
+          <li><%= button_to "Delete", destroy_product_path(product.id), method: :delete %></li>
+        </ul>
+      <% end %>
+    <br>
+  </div>
+  <form  class="add_product" action="/products" method="post">
+    Add a product:<br>
+    <label for="name">Name</label>
+    <input type="text" name="product[name]"   />
+    <input type = "submit" value="Add">
+  </form>
+  </div>
+
 </div>
+
+
 
 <div class="sales_display">
   <h3>Sales</h3>
