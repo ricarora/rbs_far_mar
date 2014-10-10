@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       puts "error"
     else
       session[:vendor_id] = @vendor.id
-      redirect_to "/vendors/edit"
+      redirect_to "/vendors/profile"
     end
   end
 

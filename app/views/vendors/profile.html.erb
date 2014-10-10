@@ -1,0 +1,50 @@
+<h2>Vendor Profile</h2>
+
+<%= link_to "New Vendor", "/vendors/new" %>
+
+<%= link_to "Market", "/markets/search" %>
+
+<%= link_to "List of Markets", "/markets/index" %>
+
+<%= link_to "Products", "/products/new" %>
+
+<div class="profile">
+<ul>
+  <li>Vendor Name: <%= @vendor.name %></li>
+  <li>Number of Employees: <%= @vendor.no_of_employees %></li>
+  <% if @vendor.market %>
+    <li>Associated Market: <%= @vendor.market.name %></li>
+    <li>Market Address: <%= @vendor.market.address %></li>
+    <li>Market City: <%= @vendor.market.city %></li>
+    <li>Market County: <%= @vendor.market.county %></li>
+    <li>Market zip: <%= @vendor.market.zip %></li>
+  <% else %>
+    <li><%= link_to "Add Market to profile", market_sessions_path %></li>
+  <% end %>
+  <li><%= link_to "Edit", edit_vendor_path(@vendor.id) %></li>
+  <li><%= button_to "Delete", destroy_vendor_path(@vendor.id), method: :delete %></li>
+</ul>
+</div>
+
+<div class="product_display">
+  <h3>Products</h3>
+    <% @vendor.products.each do |product| %>
+       <ul>
+        <li><%= product.name %></li>
+        <li><%= link_to "Edit", edit_product_path(product.id) %></li>
+        <li><%= button_to "Delete", destroy_product_path(product.id), method: :delete %></li>
+      </ul>
+    <% end %>
+</div>
+
+<div class="sales_display">
+  <h3>Sales</h3>
+    <% @vendor.sales.each do |sale| %>
+       <ul>
+        <li><%= sale.amount %></li>
+        <li><%= sale.purchase_date %></li>
+        <li><%= link_to "Edit", edit_product_path(product.id) %></li>
+        <li><%= button_to "Delete", destroy_product_path(product.id), method: :delete %></li>
+      </ul>
+    <% end %>
+</div>

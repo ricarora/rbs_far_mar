@@ -40,5 +40,4 @@ class MarketsController < ApplicationController
   def post_params #rails does this for you
     params.require(:market).permit(:name,:address,:city,:county,:state,:zip)
   end
-
 end

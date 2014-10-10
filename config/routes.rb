@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get "/vendors/index", to: "vendors#index"
   get "/vendors/new", to: "vendors#new"
   post "/vendors", to: "vendors#create"
+  get "/vendors/profile", to: "vendors#profile"
 
   get "/markets/index", to: "markets#index", as: :market_sessions
 
@@ -45,7 +46,7 @@ Rails.application.routes.draw do
   put "/products/:id", to: "products#update"
   delete "/products/:id", to: "products#delete", as: :destroy_product
 
-  root "sessions#create"
+  root "sessions#new"
 
 
   get "/sessions/user", to: "sessions#user"
