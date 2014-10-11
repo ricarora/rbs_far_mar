@@ -48,11 +48,10 @@ ActiveRecord::Schema.define(version: 20141010033518) do
     t.string   "name"
     t.integer  "no_of_employees"
     t.integer  "market_id"
-    t.string   "username"
-    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
-
+    t.string   "password"
+    t.string   "username"
   end
 
 end
