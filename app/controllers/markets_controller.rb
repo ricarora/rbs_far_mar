@@ -22,9 +22,9 @@ class MarketsController < ApplicationController
   end
 
   def search
-    # raise params.inspect
-    @market = index.where("name: ?", name: params[:input])
-    
+    raise params.inspect
+    @market = index.where("name: LIKE ?", name: params[:input])
+
   end
 
   def edit
