@@ -26,13 +26,14 @@ Rails.application.routes.draw do
   get "/vendors/new", to: "vendors#new"
   post "/vendors", to: "vendors#create"
   get "/vendors/profile", to: "vendors#profile"
+  post "/vendors/add_market", to: "vendors#add_market", as: :add_market
 
   get "/markets/index", to: "markets#index", as: :market_sessions
 
   get "/markets/new", to: "markets#new"
   post "/markets", to: "markets#create"
   get "/markets/lookup", to: "markets#lookup"
-  post "/markets/search", to: "markets#search"
+  post "/markets/lookup", to: "markets#lookup"
 
   get "/products/new", to: "products#new", as: :product_new
   post "/products", to: "products#create"

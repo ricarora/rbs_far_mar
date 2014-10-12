@@ -15,7 +15,7 @@
     <li>Market County: <%= @vendor.market.county %></li>
     <li>Market zip: <%= @vendor.market.zip %></li>
   <% else %>
-    <li><%= link_to "Add Market to profile", market_sessions_path %></li>
+    <li><%= link_to "Add Market to profile", markets_lookup_path %></li>
   <% end %>
   <li><%= link_to "Edit", edit_vendor_path(@vendor.id) %></li>
   <li><%= button_to "Delete", destroy_vendor_path(@vendor.id), method: :delete %></li>

@@ -41,6 +41,11 @@ class VendorsController < ApplicationController
 
   def profile
     @vendor = Vendor.find(session[:vendor_id])
-    
+  end
+
+  def add_market
+    id = params[:format]
+    profile.update(market_id: id.to_i)
+    redirect_to vendors_profile_path
   end
 end

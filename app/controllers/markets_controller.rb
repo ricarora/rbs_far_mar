@@ -17,14 +17,20 @@ class MarketsController < ApplicationController
     end
   end
 
+  # def search
+  #   raise params.inspect
+  #   @markets = Market.search(params[:search])
+  #   redirect_to "/markets/lookup"
+  # end
+
   def lookup
-    new
-  end
-
-  def search
-    raise params.inspect
-    @market = index.where("name: LIKE ?", name: params[:input])
-
+    #srch = params[:params][:search]
+    srch = params[:search]
+    if srch
+      @markets = Market.all.where('lower(name) LIKE ?', "%#{srch.downcase}%")
+    else
+      @markets = index
+    end
   end
 
   def edit

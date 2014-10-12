@@ -40,9 +40,7 @@ end
   name = Faker::Commerce.product_name
   product = {
     name: name,
-    vendor_id: rand(1..100
-
-    )
+    vendor_id: rand(1..100)
   }
 
   Product.create(product)
