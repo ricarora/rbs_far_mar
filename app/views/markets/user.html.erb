@@ -1,0 +1,10 @@
+<div>
+<h1>Markets</h1>
+
+<% @markets.each do |market| %>
+<ul>
+  <li><%= link_to "<%= market.name %>", "/markets/vendors" %>, <%= market.address %>, <%= market.city %>, <%= market.state %>, <%= market.zip %>
+    </li>
+</ul>
+<% end %>
+</div>

@@ -29,7 +29,8 @@ Rails.application.routes.draw do
   post "/vendors/add_market", to: "vendors#add_market", as: :add_market
 
   get "/markets/index", to: "markets#index", as: :market_sessions
-
+  # get "/markets/guest", to: "markets#guest"
+  # get "/markets/ven", to: "markets/ven"
   get "/markets/new", to: "markets#new"
   post "/markets", to: "markets#create"
   get "/markets/lookup", to: "markets#lookup"

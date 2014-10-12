@@ -1,31 +1,21 @@
-<!-- <% form_tag "/markets/search", :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %> -->
-
-
-
-
-<form action="/markets/lookup" method="GET">
+<form class="search_button" action="/markets/lookup" method="GET">
 
   <p>
-  Market Name: <input id="search" type="text" name="search" />
+  <h2>Search Market Name</h2><input id="search" type="text" name="search" />
 
   <input type="submit"/>
 
-</p>
-
+  </p>
+  <p><%= link_to "Add New Market", "/markets/new" , style: "color:#60E605"%></p>
 </form>
 
-<div>
-
+<div class="market_display">
+  <div class="scroll_list2"
     <% @markets.each do |market| %>
     <ul>
-      <li><%= market.name %>, <%= market.address %>, <%= market.city %>, <%= market.state %>, <%= market.zip %> </li>
-      <li><%= button_to "Add", add_market_path(market.id) %></li>
+      <li><%= market.name %>, <%= market.address %>, <%= market.city %>, <%= market.state %>, <%= market.zip %>
+        <%= button_to "Add", add_market_path(market.id) %></li>
     </ul>
     <% end %>
-
+  </div>
 </div>
