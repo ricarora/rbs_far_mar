@@ -1,15 +1,12 @@
-<h2>Markets</h2>
+<div class="heading"><h2>List of Markets</h2></div>
 
+<div class="market_display">
+  <div class="scroll_list2">
 <% @markets.each do |market| %>
 <ul>
-  <li><%= market.name %>,  </li>
-  <li><%= market.address %> </li>
-  <li><%= market.city %> </li>
-  <li><%= market.county %> </li>
-  <li><%= market.state %> </li>
-  <li><%= market.zip %> </li>
+  <li>* <%= market.name %>, <%= market.address %>, <%= market.city %>, <%= market.state %>, <%= market.zip %></li>
 </ul>
-<%= link_to "Edit Market", edit_market_path(market.id) %>
-<!-- <%= link_to "Delete Market", edit_market_path(market.id), method:"delete" %> -->
 
 <% end %>
+  </div>
+</div>
