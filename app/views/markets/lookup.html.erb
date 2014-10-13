@@ -14,7 +14,8 @@
     <% @markets.each do |market| %>
     <ul>
       <li><%= market.name %>, <%= market.address %>, <%= market.city %>, <%= market.state %>, <%= market.zip %>
-        <%= button_to "Add", add_market_path(market.id) %></li>
+        <table><tr><td><%= button_to "Add", add_market_path(market.id) %></td><td><%= link_to "Edit", edit_market_path(market.id) %>
+        </td></tr></table></li>
     </ul>
     <% end %>
   </div>

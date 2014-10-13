@@ -1,5 +1,5 @@
 
-<form action="/markets/<%= @market.id %>" method="post" >
+<form class="new_entry" action="/markets/<%= @market.id %>" method="post" >
   <input type="hidden" name="_method" value="PUT">
   <h1>New Market</h1>
 
@@ -31,6 +31,6 @@
 
   <input type = "submit" value="Edit Market" id="submit">
   <div id="cancel">
-    <%= link_to "Cancel", root_path %>
+    <%= link_to "Back", markets_lookup_path %>
   </div>
 </form>
